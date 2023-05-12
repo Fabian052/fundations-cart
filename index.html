@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <!-- loader -->
+    <div class="loader">
+      <div class="loader__container"><span></span></div>
+    </div>
+
+    <!-- header -->
+    <header class="header">
+      <div class="header">
+        <nav class="nav container">
+          <a href="/" class="nav__logo">
+            <img class="logo-icon" src="./assets/images/logo-licores" alt="">
+            <!-- <svg
+              class="logo-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48.92 56.48"
+              class="logo--icon"
+            >
+              <path
+                fill="currentColor"
+                d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z"
+              ></path>
+            </svg> -->
+          </a>
+          <div class="nav__menu">
+            <button type="button" class="nav__btn btn--close">
+              <i class="bx bx-x" style="color: #de5c24"></i>
+            </button>
+
+            <ul class="nav__list">
+              <li class="nav__items">
+                <a href="#" class="nav__link">Inicio</a>
+              </li>
+              <li class="nav__items">
+                <a href="#" class="nav__link">Marcas</a>
+              </li>
+              <li class="nav__items">
+                <a href="#" class="nav__link">Nosotros</a>
+              </li>
+              <li class="nav__items">
+                <a href="#" class="nav__link">Log In</a>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav__buttons"> 
+            <button class="theme btn--theme">
+              <i class="bx bxs-moon"></i>
+            </button>
+
+            <button type="button" class="nav__btn btn--cart">
+              <i class="bx bx-shopping-bag"></i>
+              <span class="notify">0</span>
+            </button>
+
+            <button type="button" class="nav__btn btn--menu">
+              <i class="bx bx-grid-alt"></i>
+            </button>
+          </nav>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="main">
+        <section class="hero">
+            <div class="opacity"></div>
+            <div class="container">
+                <h2 class="hero__title">Bienvenido se parte de nuestro club de espíritu, vino o whisky cada mes</h2>
+                <p class="hero__description">Liquor store reune la experiencia y el gusto por las mejores bebidas y cocteles a nivel mundial </p>
+            </div>
+        </section>
+        <section class="products section">
+            <h2 class="products__title section--title">¿Cual es tu bebida Preferida?</h2>
+            <p class="product__description section--description">Ya sea que te guste el Tequila o el Vodka, tenemos un club para todos los gustos.</p>
+            <div class="products__container container">
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+             <!--    <article class="product">
+                    <div class="poduct__image">
+                        <img src="assets/img/AcMilan2023.jpg" alt="Manchester City Camiseta">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$155</span>
+                        <span class="product__stock">Disponibles: 10</span>
+                        <h3 class="product__title">Camiseta AC Milan 2023</h3>
+                    </div>
+                </article> -->
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+          <!--       <article class="product">
+                    <div class="poduct__image">
+                        <img src="assets/img/DormuntReus2023.webp" alt="Manchester City Camiseta">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$95</span>
+                        <span class="product__stock">Disponibles: 9</span>
+                        <h3 class="product__title">Camiseta Borussia Dormunt 2023</h3>
+                    </div>
+                </article> -->
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+          <!--       <article class="product">
+                    <div class="poduct__image">
+                        <img src="assets/img/PsgMbappe2023.jpg" alt="Manchester City Camiseta">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$95</span>
+                        <span class="product__stock">Disponibles: 5</span>
+                        <h3 class="product__title">Camiseta Psg Mbappe 2023</h3>
+                    </div>
+                </article> -->
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+           <!--      <article class="product">
+                    <div class="poduct__image">
+                        <img src="assets/img/MessiBarcelona.webp" alt="Manchester City Camiseta">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$220</span>
+                        <span class="product__stock">Disponibles: 4</span>
+                        <h3 class="product__title">Camiseta Barcelona Messi </h3>
+                    </div>
+                </article> -->
+
+                <article class="product">
+                    <div class="poduct__image">
+                        <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Product 1">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$10</span>
+                        <span class="product__stock">Disponibles: 3</span>
+                        <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
+                    </div>
+                </article>
+           <!--      <article class="product">
+                    <div class="poduct__image">
+                        <img src="assets/img/ManchesterCity-T-Shirt-2023.png" alt="Manchester City Camiseta">
+                    </div>
+                    <div class="product__content">
+                        <button class="product__btn add--to--cart" type="button">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                        <span class="product__price">$170</span>
+                        <span class="product__stock">Disponibles: 2</span>
+                        <h3 class="product__title">Camiseta Manchester City 2023</h3>
+                    </div>
+                </article> -->
+                
+            </div>
+          </section>
+
+          <section class="process">
+            <h3 class="process__title">Como Funciona</h3>
+            <p class="process__description">hacemos que sea fácil darse un gusto a usted o a un amigo con grandes licores cada
+              mes, conozca nuestro club de whisky del mes.</p>
+            <section class="section__article">
+              <article class="process--works">
+                <div class="card_1_choose">
+                  <a class="icono__cart" href="#"><i class='bx bxs-drink'></i></a>
+                  <h6 class="process__cart__subtitle">elige una bebida</h6>
+                  <p class="process__cart__description">Tenemos variedad de bebidas para elejir que incluyen todos los licores
+                    conocidos selecciona el que se adapte tu gusto abastece la barra para recibir el licor en la puerta de tu casa
+                    o establecimiento.</p>
+          
+              </article>
+              <article class="process--works">
+                <div class="card_1_choose">
+                  <a class="icono__cart" href="#"><i class='bx bxs-calendar'></i></a>
+                  <h6 class="process__cart__subtitle">Tiempo de espera y suscripcion</h6>
+                  <p class="process__cart__description">los miembros pueden comprar una suscripción mensual continua o prepagar
+                    por períodos de 3, 6 o 12 meses. tienes la opción de renovar tu suscripción o cancelarla en cualquier momento
+                  </p>
+              </article>
+          
+              <article class="process--works">
+                <div class="card_1_choose">
+                  <a class="icono__cart" href="#"><i class='bx bxs-package'></i></a>
+                  <h6 class="process__cart__subtitle">Ubicacion de entrega</h6>
+                  <p class="process__cart__description">Exportamos e importamos a nivel mundial toda clase de licores nuestros
+                    compradores nos caracterizan por ser una de las mejores empresas.</p>
+              </article>
+          
+              <article class="process--works">
+                <div class="card_1_choose">
+                  <a class="icono__cart" href="#"><i class='bx bxs-beer'></i></a>
+                  <h6 class="process__cart__subtitle">Disfruta cada mes</h6>
+                  <p class="process__cart__description">Después de proporcionar los detalles necesarios, le enviaremos
+                    automáticamente una botella grande de su vino o licor favorito cada mes mientras su membresía esté activa</p>
+              </article>
+            </section>
+          
+          </section>
+
+        <section class="peoples section">
+          <h2 class="peoples__title section--title">Integrantes</h2>
+          <div class="peoples__container container">
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/1.jpeg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Juan Giraldo</h3>
+                <p class="people__description">Supervisa el día a día operaciones en el area de trabajo. Se enfoca en alcanzar y mejorar la experiencia del cliente.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/2.jpg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Camilo Belalcazar</h3>
+                <p class="people__description">Se conecta con nuestros clientes a través de las redes sociales, el se centra en conectar y atraer más amantes de las
+                bebidas espirituosas a nuestro clubs.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/3.jpg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Erick Cedeño</h3>
+                <p class="people__description">Es un apasionado al momento de resolver problemas con software. le encanta aprender idiomas y leer sobre historia en su
+                tiempo libre.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/4.jpg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Oscar Cortes</h3>
+                <p class="people__description">Supervisa todo el día las operaciones constantes, generando un apoyo al rápido crecimiento del club.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/5.jpg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Fabian Ramos</h3>
+                <p class="people__description">Maneja toda la logística del Club, desde selección de botellas para envío, seguimiento. Su trabajo es hacer seguro que
+                cumplamos en nuestra promesa a los clientes.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/6.jpeg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Jesus Bernal</h3>
+                <p class="people__description">Durante más de 1 año, Jesus ha estado creando experiencias a nuestros usuario perfectas utilizando las mejores prácticas
+                de diseño y psicología del usuario.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/7.jpeg" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Manuela Salazar</h3>
+                <p class="people__description">Con más de 2 años de experiencia, Manuela supervisa toda la tecnología y arquitectura que le brinda las soluciones al
+                Club.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/8.png" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Kevin Cifuentes</h3>
+                <p class="people__description">Supervisa los producto y al equipo mientras se refleja la mejora y la eficiencia en los procesos de desarrollo.</p>
+              </div>
+            </div>
+            <div class="people">
+              <div class="people__img">
+                <img src="assets/integrants/9.png" alt="persona">
+              </div>
+              <div class="people__body">
+                <h3 class="people__title">Jesus Fernandez</h3>
+                <p class="people__description">El mejor instructor para el la Gen26 de fundamentos que podríamos haber tenido</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <!-- cart -->
+    <div class="cart">
+      <div class="cart__container">
+        <div class="cart__header">
+          <h3 class="cart__title">Carrito de compras</h3>
+          <button type="button" class="cart__btn btn--close">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="cart__body">
+          <!--    <div class="cart__empty">
+                    <i class="bx bx-cart"></i>
+                    <p class="cart__emty--text">No hay productos en el carrito</p>
+                </div> -->
+
+          <!--   <article class="article">
+                    <div class="article__image">
+                        <img src="assets/img/ManchesterCity-T-Shirt-2023.png" alt="Products 1">
+                    </div>
+                    <div class="article__content">
+                        <h3 class="article__title">Camiseta Manchester City 2023</h3>
+                    <span class="article__price">$175</span>
+                    <div  class= "article__quantity">
+                        <button type="button" class="article__quantity-btn article--minus">
+                            <i class="bx bx-minus"></i>
+
+                        </button>
+                        <span class="article__quantity-text">1</span>
+                        <button type="button" class="article__quantity-btn article--plus">
+                            <i class="bx bx-plus"></i>
+
+                        </button>
+                    </div>
+                    <button type="button" class="article__btn remove-from-cart">
+                        <i class="bx bx-trash"></i>
+                    </button>
+                    </div>
+                </article> -->
+        </div>
+
+        <div class="cart__footer">
+          <div class="cart__count">
+            <span class="cart__count--text">Artículos: </span>
+            <span class="cart__count--item">$ </span>
+          </div>
+          <div class="cart__total">
+            <span class="cart__count--text">Total: </span>
+            <span class="cart__total--item">$ </span>
+          </div>
+          <button class="cart__btn btn--buy">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <!--  footer -->
+    <footer class="footer-section">
+
+      
+      <div class="footer__container container">
+        <div class="footer__top">
+
+          <div class="footer__left">
+            <a href="/" class="nav__logo--footer">
+              <img src="./assets/images/logo-licores" alt="Logo de la página" class="logo--footer">
+            </a>
+            <p class="footer__text">
+              Esta página está diseñada para fanáticos del licor.
+            </p>
+            <ul class="footer__social">
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class='bx bxl-twitter'></i>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class="bx bxl-facebook-square"></i>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">
+                  <i class="bx bxl-whatsapp-square"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__center--right">
+          <div class="footer__center">
+            <h3 class="footer__center--title">CLUB</h3>
+            <ul class="footer__club">
+              <li class="text__list--footer">Whisky</li>
+              <li class="text__list--footer">Tequila</li>
+              <li class="text__list--footer">Vodka</li>
+              <li class="text__list--footer">Ron</li>
+            </ul>
+          </div>
+
+          <div class="footer__right">
+            <h3 class="footer__center--title">INFO</h3>
+            <ul class="footer__club">
+              <li class="text__list--footer">Inicio</li>
+              <li class="text__list--footer">Marcas</li>
+              <li class="text__list--footer">Nosotros</li>
+              <li class="text__list--footer">Login</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__text">Todos los derechos &COPY 2023 Gen26 Academlo</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
