@@ -1,38 +1,36 @@
-
-
 function cart(db, printProducts) {
-    let cart = []
+  let cart = []
 
-    //Elementos del DOM
-    const productsDOM = document.querySelector('.products__container')
-    const notifyDOM = document.querySelector('.notify')
-    const cartDOM = document.querySelector('.cart__body')
-    const countDOM = document.querySelector('.cart__count--item')
-    const totalDOM = document.querySelector('.cart__total--item')
-    const checkoutDOM = document.querySelector('.btn--buy')
+  //Elementos del DOM
+  const productsDOM = document.querySelector('.products__container')
+  const notifyDOM = document.querySelector('.notify')
+  const cartDOM = document.querySelector('.cart__body')
+  const countDOM = document.querySelector('.cart__count--item')
+  const totalDOM = document.querySelector('.cart__total--item')
+  const checkoutDOM = document.querySelector('.btn--buy')
 
-    //Funciones
+  //Funciones
 
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) { 
-        cart = JSON.parse(storedCart);
-    }
+  const storedCart = localStorage.getItem("cart");
+  if (storedCart) {
+    cart = JSON.parse(storedCart);
+  }
 
-    function printCart() {
-        let htmlCart = ''
+  function printCart() {
+    let htmlCart = ''
 
-        if (cart.length === 0) {
-            htmlCart = `
+    if (cart.length === 0) {
+      htmlCart = `
             <div class="cart__empty">
             <i class="bx bx-cart"></i>
             <p class="cart__emty--text">No hay productos en el carrito</p>
         </div> `
 
-            notifyDOM.classList.remove('show--notify')
-        } else {
-            for (const item of cart) {
-                const product = db.find(p => p.id === item.id)
-                htmlCart += `
+      notifyDOM.classList.remove('show--notify')
+    } else {
+      for (const item of cart) {
+        const product = db.find(p => p.id === item.id)
+        htmlCart += `
                 <article class="article">
                 <div class="article__image">
                     <img src="${product.image}" alt="${product.name}">
@@ -57,117 +55,117 @@ function cart(db, printProducts) {
                 </div>
             </article>
                                 `
-            }
+      }
 
 
 
-            notifyDOM.classList.add('show--notify')
-        }
-        cartDOM.innerHTML = htmlCart
-        notifyDOM.innerHTML = showItemsCount();
-        countDOM.innerHTML = showItemsCount();
-        totalDOM.innerHTML = showTotal();
-
-        /*local store*/
-        function saveLocalStore() {
-            localStorage.setItem("cart", JSON.stringify(cart));
-        }
-        saveLocalStore()
+      notifyDOM.classList.add('show--notify')
     }
-    function addToCart(id, qty = 1) {
-        const product = db.find(p => p.id === id)
-        const itemFinded = cart.find(i => i.id === id)
+    cartDOM.innerHTML = htmlCart
+    notifyDOM.innerHTML = showItemsCount();
+    countDOM.innerHTML = showItemsCount();
+    totalDOM.innerHTML = showTotal();
 
-        if (product.quantity < qty) {
-        window.alert("No hay stock");
-            return;
-        }
-        
-        if (itemFinded) {
-            itemFinded.qty += qty
-        } else {
-            cart.push({ id, qty })
+    /*local store*/
+    function saveLocalStore() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+    saveLocalStore()
+  }
+  function addToCart(id, qty = 1) {
+    const product = db.find(p => p.id === id)
+    const itemFinded = cart.find(i => i.id === id)
 
-        }
-
-        printCart()
+    if (product.quantity < qty) {
+      window.alert("No hay stock");
+      return;
     }
 
-
-    function removeFromCart(id, qty = 1) {
-        const itemFinded = cart.find(i => i.id === id)
-        const result = itemFinded.qty - qty
-        if (result > 0) {
-
-            itemFinded.qty -= qty
-        } else {
-
-            cart = cart.filter(i => i.id !== id)
-        }
-        printCart()
-    }
-
-    function deleteFromCart(id) {
-        cart = cart.filter(i => i.id !== id)
-
-        printCart()
-    }
-
-    function showItemsCount() {
-        let suma = 0
-        for (const item of cart) {
-            suma += item.qty
-        }
-        return suma
+    if (itemFinded) {
+      itemFinded.qty += qty
+    } else {
+      cart.push({ id, qty })
 
     }
-    function showTotal() {
-        let total = 0
-        for (const item of cart) {
-            const productFinded = db.find(p => p.id === item.id)
-            total += item.qty * productFinded.price
-        }
-        return total
-    }
-    function checkout() {
-        for (const item of cart) {
-            const productFinded = db.find(p => p.id === item.id)
-            productFinded.quantity -= item.qty
-        }
-        cart = []
-        printCart()
-        printProducts()
-        window.alert('Gracias por su compra')
+
+    printCart()
+  }
+
+
+  function removeFromCart(id, qty = 1) {
+    const itemFinded = cart.find(i => i.id === id)
+    const result = itemFinded.qty - qty
+    if (result > 0) {
+
+      itemFinded.qty -= qty
+    } else {
+
+      cart = cart.filter(i => i.id !== id)
     }
     printCart()
-    //eventos 
-    productsDOM.addEventListener('click', function (e) {
-        if (e.target.closest('.add--to--cart')) {
-            const id = +e.target.closest('.add--to--cart').dataset.id
-            addToCart(id)
-        }
-    })
+  }
 
-    cartDOM.addEventListener('click', function (e){
-        
-        if (e.target.closest('.article--minus')) {
-            const id = +e.target.closest('.article--minus').dataset.id
-            removeFromCart(id)
-        }
-        if (e.target.closest('.article--plus')) {
-            const id = +e.target.closest('.article--plus').dataset.id
-            addToCart(id)
-        }
-        if (e.target.closest('.remove-from-cart')) {
-            const id = +e.target.closest('.remove-from-cart').dataset.id
-            deleteFromCart(id)
-        }
-        
-    })
+  function deleteFromCart(id) {
+    cart = cart.filter(i => i.id !== id)
 
-    checkoutDOM.addEventListener('click', function (){
-        checkout()
-    })
+    printCart()
+  }
+
+  function showItemsCount() {
+    let suma = 0
+    for (const item of cart) {
+      suma += item.qty
+    }
+    return suma
+
+  }
+  function showTotal() {
+    let total = 0
+    for (const item of cart) {
+      const productFinded = db.find(p => p.id === item.id)
+      total += item.qty * productFinded.price
+    }
+    return total
+  }
+  function checkout() {
+    for (const item of cart) {
+      const productFinded = db.find(p => p.id === item.id)
+      productFinded.quantity -= item.qty
+    }
+    cart = []
+    printCart()
+    printProducts()
+    window.alert('Gracias por su compra')
+  }
+  printCart()
+  //eventos 
+  productsDOM.addEventListener('click', function (e) {
+    if (e.target.closest('.add--to--cart')) {
+      const id = +e.target.closest('.add--to--cart').dataset.id
+      addToCart(id)
+    }
+  })
+
+  cartDOM.addEventListener('click', function (e) {
+
+    if (e.target.closest('.article--minus')) {
+      const id = +e.target.closest('.article--minus').dataset.id
+      removeFromCart(id)
+    }
+    if (e.target.closest('.article--plus')) {
+      const id = +e.target.closest('.article--plus').dataset.id
+      addToCart(id)
+    }
+    if (e.target.closest('.remove-from-cart')) {
+      const id = +e.target.closest('.remove-from-cart').dataset.id
+      deleteFromCart(id)
+    }
+
+  })
+
+  checkoutDOM.addEventListener('click', function () {
+    checkout()
+  })
 }
 
 export default cart
