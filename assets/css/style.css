@@ -3,7 +3,8 @@
 
   --dark-color: hsl(22, 83%, 55%);
   --light-color: hsla(47, 71%, 49%, 1);
-  --bg-color: hsl(38, 27%, 61%);
+  /* --bg-color: hsl(38, 27%, 50%); */
+  --bg-color: hsl(25, 40%, 30%);
   --body-color: hsl(0, 0%, 96%);
   --primary-color: hsl(43, 90%, 64%);
   --title-color: hsl(226, 38%, 89%);
@@ -139,7 +140,7 @@ img {
 }
 
 body.dark {
-  --bg-color: hsl(0, 0%, 100%);
+  --bg-color: hsl(38, 27%, 12%);
   --body-color: hsl(0, 0%, 8%);
   --text-color: hsl(90, 60%, 70%);
   --text-color2: hsl(90, 60%, 70%);
@@ -212,7 +213,8 @@ body.dark {
 .logo-icon {
   width: 5.5rem;
   height: 4rem;
-  color: var(--primary-color);
+  color:  var(--primary-color);
+  z-index: var(--z-modal);
 }
 
 @media (max-width: 768px) {
@@ -353,7 +355,7 @@ body.dark {
 /* Hero */
 .hero {
   position: relative;
-  min-height: 400px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -369,7 +371,7 @@ body.dark {
   bottom: 0;
   left: 0;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .hero .container {
